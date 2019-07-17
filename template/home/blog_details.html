@@ -38,12 +38,12 @@
 									0 Comment
 								</a>
 							</div>
-							{{b_data.title_intro|safe}}
+							{{b_data.desc|safe}}
 
 							
 							<!-- Tag -->
 							<div class="flex-s-s p-t-12 p-b-15">
-								<span class="f1-s-12 cl5 m-r-8">
+							<!--	<span class="f1-s-12 cl5 m-r-8">
 									Tags:
 								</span>
 								
@@ -55,7 +55,7 @@
 									<a href="#" class="f1-s-12 cl8 hov-link1 m-r-15">
 										Crafts
 									</a>
-								</div>
+								</div> -->
 							</div>
 
 							<!-- Share -->
@@ -63,28 +63,22 @@
 								<span class="f1-s-12 cl5 p-t-1 m-r-15">
 									Share:
 								</span>
-								
-								<div class="flex-wr-s-s size-w-0">
-									<a href="#" class="dis-block f1-s-13 cl0 bg-facebook borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-										<i class="fab fa-facebook-f m-r-7"></i>
-										Facebook
-									</a>
+								  <!-- Load Facebook SDK for JavaScript -->
+								  <div id="fb-root"></div>
+								  <script>(function(d, s, id) {
+								    var js, fjs = d.getElementsByTagName(s)[0];
+								    if (d.getElementById(id)) return;
+								    js = d.createElement(s); js.id = id;
+								    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+								    fjs.parentNode.insertBefore(js, fjs);
+								  }(document, 'script', 'facebook-jssdk'));
+								</script>
 
-									<a href="#" class="dis-block f1-s-13 cl0 bg-twitter borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-										<i class="fab fa-twitter m-r-7"></i>
-										Twitter
-									</a>
-
-									<a href="#" class="dis-block f1-s-13 cl0 bg-google borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-										<i class="fab fa-google-plus-g m-r-7"></i>
-										Google+
-									</a>
-
-									<a href="#" class="dis-block f1-s-13 cl0 bg-pinterest borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-										<i class="fab fa-pinterest-p m-r-7"></i>
-										Pinterest
-									</a>
-								</div>
+								  <!-- Your share button code -->
+								  <div class="fb-share-button" 
+								    data-href="{{url}}" 
+								    data-layout="button_count">
+								  </div>
 							</div>
 						</div>
 

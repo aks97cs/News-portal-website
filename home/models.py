@@ -1,3 +1,9 @@
+'''
+@author : Anuj kumar Singh
+@desc : Models
+
+'''
+
 from django.db import models
 from ckeditor.fields import RichTextField
 # from ckeditor_uploader.fields import RichTextUploadingField
@@ -26,3 +32,10 @@ class Blog(models.Model):
 	date = models.DateTimeField() # current date time
 	title_intro = RichTextUploadingField(null=True) # done
 	desc = RichTextUploadingField() # done
+
+class PostAnalytics(models.Model):
+	id = models.AutoField(primary_key = True)
+	blog_id = models.CharField(max_length = 200)
+	blog_title = models.CharField(max_length = 400)
+	ip = models.CharField(max_length = 200)
+	location = models.CharField(max_length = 200) # default null

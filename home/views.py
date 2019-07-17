@@ -21,12 +21,14 @@ def blog_details(request, id = 1):
 	recent_post = Blog.objects.order_by('-date')[0:5]
 	url = request.get_full_path()
 	uri = "http://thedailyreport.co.in"+str(url)
+	ip = get_client_ip(request)
 	return render(request, 'home/blog_details.html',{
 			'b_data' : b_data[0],
 			'popular_post' : popular_post,
 			'recent_post' : recent_post,
 			'catg' : c.category,
-			'url' : uri
+			'url' : uri,
+			'ip' : ip
 		})
 
 # Function for catecory wise post
@@ -42,3 +44,12 @@ def post_by_catg(request, catg):
 		'catg' : c.category[catg]
 	})
 
+# Function to get client ip and update on db
+
+def get_client_ip(request):
+	x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+	if x_forwarded_for:
+		ip = x_forwarded_for.split(',')[0]
+	else:
+		ip = request.META.get('REMOTE_ADDR')
+	return ip

@@ -6,5 +6,5 @@ class BlogAdmin(admin.ModelAdmin):
 admin.site.register(Blog, BlogAdmin)
 
 class PostAnalyticsAdmin(admin.ModelAdmin):
-	list_display = ['title']
+	list_display = ['ip']
 admin.site.register(PostAnalytics, PostAnalyticsAdmin) 

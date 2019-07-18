@@ -5,7 +5,7 @@
 	<title>TheDaily|Report</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="google-site-verification" content="1ycha74yxdTdy591s-AU1dsTeIRmGgIgyWi0TejnU70" />
+<!--	<meta name="google-site-verification" content="1ycha74yxdTdy591s-AU1dsTeIRmGgIgyWi0TejnU70" /> -->
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="{%static 'images/icons/logo-02.png'%}"/>
 <!--===============================================================================================-->
@@ -25,6 +25,14 @@
 <!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="{%static 'css/main.css' %}">
 <!--===============================================================================================-->
+{% if d_blog %}
+	<meta property="og:url"           content="{{url}}" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="{{b_data.title}}" />
+	<meta property="og:description"   content="{{b_data.smw_desc}}" />
+	<meta property="og:image"         content="http://13.235.152.1/media/{{b_data.smw_img}}" />
+{% endif %}
+
 </head>
 <body class="animsition">
 <!-- Header  -->

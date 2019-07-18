@@ -28,6 +28,8 @@ class Blog(models.Model):
 	    choices=cat_list,
 	    default=politics,
 	)
+	smw_img = models.FileField(upload_to='uploads/', null = True) # swm = social media widget
+	smw_desc = models.CharField(max_length = 500, null = True)
 	view = models.IntegerField()  # default zero  
 	date = models.DateTimeField() # current date time
 	title_intro = RichTextUploadingField(null=True) # done

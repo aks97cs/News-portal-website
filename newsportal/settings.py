@@ -24,8 +24,11 @@ SECRET_KEY = 'z=%nu_*z3$blq1*he1dz2w*t8(r7_zfwevfcaez^!7#t+6lj51'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+# DEBUG = True
 
-ALLOWED_HOSTS = ['thedailyreport.co.in','13.235.152.1','localhost']
+
+ALLOWED_HOSTS = ['thedailyreport.co.in','13.235.152.1','localhost']// for production
+# ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition

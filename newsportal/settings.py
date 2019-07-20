@@ -27,7 +27,7 @@ DEBUG = False
 # DEBUG = True
 
 
-ALLOWED_HOSTS = ['thedailyreport.co.in','13.235.152.1','localhost']// for production
+ALLOWED_HOSTS = ['thedailyreport.co.in','13.235.152.1','localhost']
 # ALLOWED_HOSTS = ['127.0.0.1']
 
 

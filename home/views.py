@@ -2,15 +2,18 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from home.models import Blog
 from config.define import Constant
-
+from django.core.paginator import Paginator
 # Home Page
 def index(request):
 	b_data = Blog.objects.order_by('-date',)
 	popular_post = Blog.objects.order_by('-view',)[0:5]
 	print(b_data[0].title)
 	d_blog = 0
+	paginator = Paginator(b_data, 4)
+	page = request.GET.get('page')
+	post_data = paginator.get_page(page)
 	return render(request, 'home/index.html',{
-			'b_data' : b_data,
+			'b_data' : post_data,
 			'popular_post' : popular_post,
 			'd_blog' : d_blog
 		})

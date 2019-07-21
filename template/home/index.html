@@ -198,6 +198,23 @@
 									</div>
 							</div>
 						{% endfor %}
+						<div class="pagination">
+              <span class="step-links">
+                  {% if b_data.has_previous %}
+                      <a href="?page=1">&laquo; first</a>
+                      <a href="?page={{ b_data.previous_page_number }}">previous</a>
+                  {% endif %}
+          
+                  <span class="current">
+                      Page {{ b_data.number }} of {{ b_data.paginator.num_pages }}.
+                  </span>
+          
+                  {% if b_data.has_next %}
+                      <a href="?page={{ b_data.next_page_number }}">next</a>
+                      <a href="?page={{ b_data.paginator.num_pages }}">last &raquo;</a>
+                  {% endif %}
+              </span>
+          </div>
 					</div>
 				</div>
 

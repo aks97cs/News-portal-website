@@ -5,7 +5,7 @@ from config.define import Constant
 
 # Home Page
 def index(request):
-	b_data = Blog.objects.all()
+	b_data = Blog.objects.order_by('-date',)
 	popular_post = Blog.objects.order_by('-view',)[0:5]
 	print(b_data[0].title)
 	d_blog = 0
@@ -27,11 +27,13 @@ def blog_details(request, id = 1):
 	b_view = int(b_data[0].view)+1
 	#return HttpResponse(b_view)
 	Blog.objects.filter(id = id).update(view = b_view)
+	catg = b_data[0].category
+	t_data = c.category
 	return render(request, 'home/blog_details.html',{
 			'b_data' : b_data[0],
 			'popular_post' : popular_post,
 			'recent_post' : recent_post,
-			'catg' : c.category,
+			'catg' : t_data[catg],
 			'url' : uri,
 			'ip' : ip,
 			'd_blog' : 1

@@ -28,7 +28,7 @@ DEBUG = False
 
 
 ALLOWED_HOSTS = ['www.thedailyreport.co.in','thedailyreport.co.in','13.235.152.1','localhost']
-# ALLOWED_HOSTS = ['127.0.0.1']
+#ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
+    'django_user_agents'
 ]
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
@@ -59,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_user_agents.middleware.UserAgentMiddleware'
 ]
 
 ROOT_URLCONF = 'newsportal.urls'

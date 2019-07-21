@@ -3,7 +3,12 @@
 {%block content%}
 
 	<!-- Post -->
+	{% if is_mobile %}
+		<section>
+	{% endif %}
+	{% if not is_mobile %}
 	<section class="bg0 p-t-70">
+	{% endif %}
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-10 col-lg-8">

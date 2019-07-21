@@ -12,10 +12,13 @@ def index(request):
 	paginator = Paginator(b_data, 4)
 	page = request.GET.get('page')
 	post_data = paginator.get_page(page)
+	is_mobile = request.user_agent.is_mobile
+	print(is_mobile)
 	return render(request, 'home/index.html',{
 			'b_data' : post_data,
 			'popular_post' : popular_post,
-			'd_blog' : d_blog
+			'd_blog' : d_blog,
+			'is_mobile' : is_mobile
 		})
 
 # Function for blog details
@@ -32,6 +35,7 @@ def blog_details(request, id = 1):
 	Blog.objects.filter(id = id).update(view = b_view)
 	catg = b_data[0].category
 	t_data = c.category
+	is_mobile = request.user_agent.is_mobile
 	return render(request, 'home/blog_details.html',{
 			'b_data' : b_data[0],
 			'popular_post' : popular_post,
@@ -39,7 +43,9 @@ def blog_details(request, id = 1):
 			'catg' : t_data[catg],
 			'url' : uri,
 			'ip' : ip,
-			'd_blog' : 1
+			'd_blog' : 1,
+			'is_mobile' : is_mobile
+
 		})
 
 # Function for catecory wise post
@@ -48,12 +54,15 @@ def post_by_catg(request, catg):
 	b_data = Blog.objects.filter(category = catg)
 	popular_post = Blog.objects.order_by('-view')[0:5]
 	recent_post = Blog.objects.order_by('-date')[0:5]
+	is_mobile = request.user_agent.is_mobile
 	return render(request, 'home/blog_via_category.html',{
 		'b_data' : b_data,
 		'popular_post' : popular_post,
 		'recent_post' : recent_post,
 		'catg' : c.category[catg],
-		'd_blog' : 0
+		'd_blog' : 0,
+		'is_mobile' : is_mobile
+
 	})
 
 # Function to get client ip and update on db

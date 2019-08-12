@@ -9,7 +9,7 @@ def index(request):
 	popular_post = Blog.objects.order_by('-view',)[0:5]
 	print(b_data[0].title)
 	d_blog = 0
-	paginator = Paginator(b_data, 4)
+	paginator = Paginator(b_data, 5)
 	page = request.GET.get('page')
 	post_data = paginator.get_page(page)
 	is_mobile = request.user_agent.is_mobile

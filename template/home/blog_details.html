@@ -62,12 +62,14 @@
 							</div>
 
 							<!-- Share -->
+							
 							<div class="flex-s-s">
 								<span class="f1-s-12 cl5 p-t-1 m-r-15">
 									Share:
 								</span>
+							
 								  <!-- Load Facebook SDK for JavaScript -->
-								  <div id="fb-root"></div>
+								<!--   <div id="fb-root"></div>
 								  <script>(function(d, s, id) {
 								    var js, fjs = d.getElementsByTagName(s)[0];
 								    if (d.getElementById(id)) return;
@@ -77,18 +79,19 @@
 								  }(document, 'script', 'facebook-jssdk'));
 								</script>
 
-								  <!-- Your share button code -->
 								  <div class="fb-share-button" 
 								    data-href="{{url}}" 
 								    data-layout="button_count">
-								  </div>	
+								  </div> -->
+															<div class="sharethis-inline-share-buttons"></div>
+							
 									
-								<a class="twitter-share-button" style = "padding-left:10px;"  href="https://twitter.com/intent/tweet">
+<!--								<a class="twitter-share-button" style = "padding-left:10px;"  href="https://twitter.com/intent/tweet">
 									Tweet
 								</a>
 								<a  style = "padding-left:10px;"  href="https://plus.google.com/share?url={{url}}">
 									<img src="{% static 'images/icons/gshare.png'%}" style="height: 20px;width:50px;">
-								</a>
+								</a> -->
 							</div>
 						</div>
 

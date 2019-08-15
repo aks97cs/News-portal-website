@@ -176,52 +176,55 @@
 							Latest News
 						</h3>
 					</div>
-
-					<div class="row p-t-35">
-						{% for post in b_data  %}
-							<div class="flex-wr-sb-s p-t-40 p-b-15 how-bor2" style="margin-top: -50px;">
-									<h3 class="p-b-12">
-												<a href="/blog_details/{{post.id}}" class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
-													{{post.title}}
+					<!-- <div class="container"> -->
+						<div class="row p-t-35">
+							{% for post in b_data  %}
+							<div class="container">
+								<div class="flex-wr-sb-s p-t-40 p-b-15 how-bor2" style="margin-top: -50px;max-width: 100%;">
+										<h3 class="p-b-12">
+													<a href="/blog_details/{{post.id}}" class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
+														{{post.title}}
+													</a>
+										</h3>
+										<div style="max-width:100%;">{{post.title_intro|safe}}</div>
+										<div class="size-w-9 w-full-sr575 m-b-25">
+											<div class="cl8 p-b-18">
+												<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+													by The Daily Report
 												</a>
-									</h3>
-									<div>{{post.title_intro|safe}}</div>
-									<div class="size-w-9 w-full-sr575 m-b-25">
-										<div class="cl8 p-b-18">
-											<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-												by The Daily Report
+												<span class="f1-s-3 m-rl-3">
+													-
+												</span>
+												<span class="f1-s-3">
+													{{post.date}}
+												</span>
+											</div>							
+											<a href="/blog_details/{{post.id}}" class="f1-s-1 cl9 hov-cl10 trans-03">
+												<b style="color:#FFDF00; background-color:#333; padding: 2px 2px 2px 2px;">Read More</b>
+												<i class="m-l-2 fa fa-long-arrow-alt-right"></i>
 											</a>
-											<span class="f1-s-3 m-rl-3">
-												-
-											</span>
-											<span class="f1-s-3">
-												{{post.date}}
-											</span>
-										</div>							
-										<a href="/blog_details/{{post.id}}" class="f1-s-1 cl9 hov-cl10 trans-03">
-											<b style="color:#FFDF00; background-color:#333; padding: 2px 2px 2px 2px;">Read More</b>
-											<i class="m-l-2 fa fa-long-arrow-alt-right"></i>
-										</a>
-									</div>
+										</div>
+								</div>
 							</div>
-						{% endfor %}
-						<div class="pagination">
-              <span class="step-links">
-                  {% if b_data.has_previous %}
-                      <a href="?page=1">&laquo; first</a>
-                      <a href="?page={{ b_data.previous_page_number }}">previous</a>
-                  {% endif %}
-          
-                  <span class="current">
-                      Page {{ b_data.number }} of {{ b_data.paginator.num_pages }}.
-                  </span>
-          
-                  {% if b_data.has_next %}
-                      <a href="?page={{ b_data.next_page_number }}">next</a>
-                      <a href="?page={{ b_data.paginator.num_pages }}">last &raquo;</a>
-                  {% endif %}
-              </span>
-          </div>
+							{% endfor %}
+						<!-- </div> -->
+					<!-- </div> -->
+					<div class="pagination">
+              			<span class="step-links">
+		                  {% if b_data.has_previous %}
+		                      <a href="?page=1">&laquo; first</a>
+		                      <a href="?page={{ b_data.previous_page_number }}">previous</a>
+		                  {% endif %}         
+		                  <span class="current">
+		                      Page {{ b_data.number }} of {{ b_data.paginator.num_pages }}.
+		                  </span>
+		          
+		                  {% if b_data.has_next %}
+		                      <a href="?page={{ b_data.next_page_number }}">next</a>
+		                      <a href="?page={{ b_data.paginator.num_pages }}">last &raquo;</a>
+		                  {% endif %}
+			            </span>
+          			</div>
 					</div>
 				</div>
 

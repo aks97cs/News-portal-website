@@ -1,5 +1,12 @@
-# newsportal
-newsportal
+# News Portal Website
+
+## Setup
+``
+1. clone git repo
+2. setup your virtual env [optional]
+3. in the root directory run pip3 install -r requirements.txt
+4. python3 manage.py
+``
 
 ## Home Page
 ![1599535765991](https://user-images.githubusercontent.com/37739705/92430449-75bcc680-f1b2-11ea-9f02-199737b42135.png)

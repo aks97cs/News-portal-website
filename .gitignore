@@ -1,3 +1,4 @@
 *.pyc
 tmp/*
-/newsportal/settings.py
+#/newsportal/settings.py
+/venv

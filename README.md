@@ -5,7 +5,10 @@
 1. clone git repo
 2. setup your virtual env [optional]
 3. in the root directory run pip3 install -r requirements.txt
-4. python3 manage.py
+4. python3 manage.py createsuperuser [to make admin login credentails ]
+5. python3 manage.py runserver
+6. Homepage: 127.0.0.1:8000
+7. Admin panel: 127.0.0.1:8000/admin
 `
 
 ## Home Page
